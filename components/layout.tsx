@@ -1,5 +1,4 @@
 import Header from "./header"
-import Footer from "./footer"
 import type { ReactChildren } from "react"
 
 interface Props {
@@ -9,9 +8,8 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <>
-      <Header />
+      <Header/>
       <main>{children}</main>
-      <Footer />
     </>
   )
 }
