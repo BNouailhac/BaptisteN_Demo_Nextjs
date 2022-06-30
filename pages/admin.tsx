@@ -1,17 +1,33 @@
 import Layout from "../components/layout"
+import { useState, useEffect } from 'react';
 
 export default function Page() {
+  const [name, setName] = useState([]);
+  
+  useEffect(() => {
+    callAPI()
+  }, [])
+
+  const callAPI = async () => {
+		try {
+			const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+			setName(await res.json())
+		} catch (err) {
+			console.log(err);
+		}
+	};
+  
   return (
     <Layout>
-      <h1>This page is protected by Middleware</h1>
-      <p>Only admin users can see this page.</p>
-      <p>
-        To learn more about the NextAuth middleware see&nbsp;
-        <a href="https://docs-git-misc-docs-nextauthjs.vercel.app/configuration/nextjs#middleware">
-          the docs
-        </a>
-        .
-      </p>
+      <div className="App">
+        <ol>
+          {name.map((data) => {
+            return(
+              <li className="list-group-item" key={data.id}>{data.title}</li>
+            )
+          })}
+        </ol>
+      </div>
     </Layout>
   )
 }
