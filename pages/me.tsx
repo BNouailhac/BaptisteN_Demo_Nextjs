@@ -6,6 +6,7 @@ export default function MePage() {
 
   return (
     <Layout>
+      <h1>User Data</h1>
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </Layout>
   )
