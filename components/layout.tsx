@@ -75,11 +75,6 @@ export default function Layout({ children }: Props) {
                 <a>Posts</a>
               </Link>
             </li>
-            <li className={styles.navItem}>
-              <Link href="/me">
-                <a>User</a>
-              </Link>
-            </li>
           </ul>
         </nav>
       )}
