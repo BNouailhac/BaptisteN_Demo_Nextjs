@@ -4,7 +4,7 @@ import Card from "../components/Card/Card.js";
 import CardBody from "../components/Card/CardBody.js";
 import Link from "next/link"
 
-export default function Page() {
+export default function Posts() {
   const [posts, setName] = useState([]);
   
   useEffect(() => {

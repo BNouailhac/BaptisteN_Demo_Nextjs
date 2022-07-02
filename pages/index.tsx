@@ -1,6 +1,5 @@
 import Layout from "../components/layout"
-import { signIn, signOut, useSession } from "next-auth/react"
-import styles from "../components/header.module.css"
+import { useSession } from "next-auth/react"
 
 export default function IndexPage() {
   const { data: session, status } = useSession()

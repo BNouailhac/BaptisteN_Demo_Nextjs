@@ -1,5 +1,5 @@
 import Link from "next/link"
-import styles from "./header.module.css"
+import styles from "../styles/header.module.css"
 import { signIn, signOut, useSession } from "next-auth/react"
 
 interface Props {
@@ -73,6 +73,11 @@ export default function Layout({ children }: Props) {
             <li className={styles.navItem}>
               <Link href="/posts">
                 <a>Posts</a>
+              </Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link href="/me">
+                <a>User</a>
               </Link>
             </li>
           </ul>
